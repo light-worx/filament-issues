@@ -47,7 +47,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lightworx\\FilamentIssues\\FillamentIssuesServiceProvider"
+                "Lightworx\\FilamentIssues\\FilamentIssuesServiceProvider"
             ]
         }
     },
