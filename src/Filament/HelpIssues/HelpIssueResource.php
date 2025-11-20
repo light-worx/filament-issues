@@ -1,12 +1,12 @@
 <?php
 
-namespace Lightworx\FilamentIssues\Filament\Resources\HelpIssues;
+namespace Lightworx\FilamentIssues\Filament\HelpIssues;
 
-use Lightworx\FilamentIssues\Filament\Resources\HelpIssues\Pages\CreateHelpIssue;
-use Lightworx\FilamentIssues\Filament\Resources\HelpIssues\Pages\EditHelpIssue;
-use Lightworx\FilamentIssues\Filament\Resources\HelpIssues\Pages\ListHelpIssues;
-use Lightworx\FilamentIssues\Filament\Resources\HelpIssues\Schemas\HelpIssueForm;
-use Lightworx\FilamentIssues\Filament\Resources\HelpIssues\Tables\HelpIssuesTable;
+use Lightworx\FilamentIssues\Filament\HelpIssues\Pages\CreateHelpIssue;
+use Lightworx\FilamentIssues\Filament\HelpIssues\Pages\EditHelpIssue;
+use Lightworx\FilamentIssues\Filament\HelpIssues\Pages\ListHelpIssues;
+use Lightworx\FilamentIssues\Filament\HelpIssues\Schemas\HelpIssueForm;
+use Lightworx\FilamentIssues\Filament\HelpIssues\Tables\HelpIssuesTable;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

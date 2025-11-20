@@ -1,8 +1,8 @@
 <?php
 
-namespace Lightworx\FilamentIssues\Filament\Resources\HelpIssues\Pages;
+namespace Lightworx\FilamentIssues\Filament\HelpIssues\Pages;
 
-use Lightworx\FilamentIssues\Filament\Resources\HelpIssues\HelpIssueResource;
+use Lightworx\FilamentIssues\Filament\HelpIssues\HelpIssueResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\RestoreAction;

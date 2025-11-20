@@ -1,6 +1,6 @@
 <?php
 
-namespace Lightworx\FilamentIssues\Filament\Resources\HelpIssues\Schemas;
+namespace Lightworx\FilamentIssues\Filament\HelpIssues\Schemas;
 
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -19,6 +19,15 @@ class HelpIssueForm
                         'bug' => 'Log a fault',
                         'feature' => 'Feature request',
                         'question' => 'Ask a question'
+                    ])
+                    ->selectablePlaceholder(false)
+                    ->required(),
+                Select::make('status')
+                    ->default('open')
+                    ->options([
+                        'open' => 'Open',
+                        'busy' => 'Being addressed',
+                        'closed' => 'Closed'
                     ])
                     ->selectablePlaceholder(false)
                     ->required(),

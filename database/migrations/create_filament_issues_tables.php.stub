@@ -16,6 +16,7 @@ return new class () extends Migration {
             $table->id();
             $table->string('category');
             $table->text('description');
+            $table->string('status');
             $table->string('user_id');
             $table->timestamps();
         });
@@ -25,6 +26,7 @@ return new class () extends Migration {
             $table->string('title');
             $table->text('help_text');
             $table->string('slug');
+            $table->boolean('is_published');
             $table->timestamps();
         });
     }

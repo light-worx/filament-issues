@@ -1,6 +1,6 @@
 <?php
 
-namespace Lightworx\FilamentIssues\Resources\HelpDocuments\Schemas;
+namespace Lightworx\FilamentIssues\Filament\HelpDocuments\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;

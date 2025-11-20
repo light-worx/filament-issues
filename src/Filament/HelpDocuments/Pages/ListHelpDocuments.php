@@ -1,8 +1,8 @@
 <?php
 
-namespace Lightworx\FilamentIssues\Resources\HelpDocuments\Pages;
+namespace Lightworx\FilamentIssues\Filament\HelpDocuments\Pages;
 
-use Lightworx\FilamentIssues\Resources\HelpDocuments\HelpDocumentResource;
+use Lightworx\FilamentIssues\Filament\HelpDocuments\HelpDocumentResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
