@@ -19,6 +19,14 @@ return new class () extends Migration {
             $table->string('user_id');
             $table->timestamps();
         });
+
+        Schema::create('help_documents', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('help_text');
+            $table->string('slug');
+            $table->timestamps();
+        });
     }
 
     /**

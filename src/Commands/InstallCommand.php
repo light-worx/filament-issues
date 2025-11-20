@@ -6,18 +6,7 @@ use Illuminate\Console\Command;
 
 class InstallCommand extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'filament-issues:install';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Install the Filament Issues package';
 
     /**
@@ -42,8 +31,7 @@ class InstallCommand extends Command
 
         $this->comment('Publishing Filament Issues Migrations...');
         $this->callSilent('vendor:publish', ['--tag' => 'filament-issues-migrations']);
-        $this->callSilent('vendor:publish', ['--tag' => 'tags-migrations']);
-
+        $this->callSilent('migrate');
         $this->info('Filament Issues was installed successfully.');
         return 0;
     }
