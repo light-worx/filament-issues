@@ -57,11 +57,11 @@ class FilamentIssuesPlugin implements Plugin
                     return HelpIssue::query()->where('status', 'open')->count();
                 })
                 ->icon('heroicon-o-question-mark-circle')
-                ->url(fn () => route('filament.admin.resources.help-issues.index')),
+                ->url(fn () => HelpIssueResource::getUrl('index')),
             Action::make('docs')
                 ->label('Documentation')
                 ->icon('heroicon-o-lifebuoy')
-                ->url(fn () => route('filament.admin.resources.help-documents.index')),
+                ->url(fn () => HelpDocumentResource::getUrl('index')),
         ];
         $panel->userMenuItems($menuItems);
         $panel->renderHook(

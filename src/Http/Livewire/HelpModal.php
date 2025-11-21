@@ -15,6 +15,8 @@ class HelpModal extends Component implements HasForms, HasActions
     use InteractsWithActions;
     use InteractsWithForms;
 
+    public string $activeTab = '';
+
     // Property to hold the fetched document
     public ?HelpDocument $helpDocument = null; 
 
