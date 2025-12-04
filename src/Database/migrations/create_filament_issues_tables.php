@@ -39,5 +39,6 @@ return new class () extends Migration {
     public function down()
     {
         Schema::dropIfExists('help_issues');
+        Schema::dropIfExists('help_documents');
     }
 };

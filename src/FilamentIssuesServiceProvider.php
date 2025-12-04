@@ -2,27 +2,23 @@
 
 namespace Lightworx\FilamentIssues;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Lightworx\FilamentIssues\Models\HelpDocument;
-use Lightworx\FilamentIssues\Commands\InstallCommand;
 
-class FilamentIssuesServiceProvider extends PackageServiceProvider
+class FilamentIssuesServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    public function boot(): void
     {
-        $package
-            ->name('filament-issues')
-            ->hasConfigFile()
-            ->hasTranslations()
-            ->hasCommand(InstallCommand::class)
-            ->hasMigration('create_filament_issues_tables');
-    }
-
-    public function packageBooted(): void
-    {
-        $this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'filament-issues');
+        $this->mergeConfigFrom(__DIR__ . '/Config/filament-issues.php', 'filament-issues');
+        $this->publishes([
+            __DIR__ . '/Config/filament-issues.php' => config_path('filament-issues.php'),
+        ], 'config');
+        $this->loadRoutesFrom(__DIR__.'/Http/routes.php');
+        $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
+        $this->loadViewsFrom(__DIR__.'/Resources/views', 'filament-issues');
+        if (file_exists($file = __DIR__ . '/helpers.php')) {
+            require_once $file;
+        }
     }
 
     /**
