@@ -28,7 +28,7 @@ class HelpModal extends Component implements HasForms, HasActions
     }
     
     // 2. Define the contextual help retrieval logic (or call your SP method here)
-    protected function getContextualHelp(): ?HelpDocument
+    public function getContextualHelp(): ?HelpDocument
     {
         $currentRoute = request()->route()?->getName();
 

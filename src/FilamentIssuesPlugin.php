@@ -4,11 +4,8 @@ namespace Lightworx\FilamentIssues;
 
 use Filament\Actions\Action;
 use Filament\Contracts\Plugin;
-use Filament\Facades\Filament;
-use Filament\Navigation\NavigationItem;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
-use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Facades\Blade;
 use Lightworx\FilamentIssues\Filament\HelpDocuments\HelpDocumentResource;
@@ -16,6 +13,7 @@ use Lightworx\FilamentIssues\Filament\HelpIssues\HelpIssueResource;
 use Lightworx\FilamentIssues\Http\Livewire\HelpModal;
 use Lightworx\FilamentIssues\Models\HelpDocument;
 use Lightworx\FilamentIssues\Models\HelpIssue;
+use Lightworx\FilamentIssues\Filament\Widgets\IssuesWidget;
 use Livewire\Livewire;
 
 class FilamentIssuesPlugin implements Plugin
@@ -64,9 +62,12 @@ class FilamentIssuesPlugin implements Plugin
                 ->url(fn () => HelpDocumentResource::getUrl('index')),
         ];
         $panel->userMenuItems($menuItems);
+        $panel->widgets([
+            IssuesWidget::class
+        ]);
         $panel->renderHook(
-            PanelsRenderHook::GLOBAL_SEARCH_AFTER,
-            fn (): string => Blade::render('@livewire(\'filament-issues.help-modal\')'),
+            PanelsRenderHook::GLOBAL_SEARCH_AFTER, // or USER_MENU_BEFORE/AFTER
+            fn() => Blade::render('@livewire("filament-issues.help-modal")')
         );
     }
 
