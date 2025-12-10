@@ -1,0 +1,1 @@
+Add FilamentIssuesPlugin::make() to your AdminPanelProvider
