@@ -73,7 +73,7 @@ class FilamentIssuesPlugin implements Plugin
 
     public function boot(Panel $panel): void
     {
-        Livewire::component('filament-issues.help-modal', HelpModal::class);        
+        //Livewire::component('filament-issues.help-modal', HelpModal::class);        
     }
 
     protected function renderHelpIcon(): string
