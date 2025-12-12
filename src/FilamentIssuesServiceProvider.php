@@ -3,7 +3,9 @@
 namespace Lightworx\FilamentIssues;
 
 use Illuminate\Support\ServiceProvider;
+use Lightworx\FilamentIssues\Http\Livewire\HelpModal;
 use Lightworx\FilamentIssues\Models\HelpDocument;
+use Livewire\Livewire;
 
 class FilamentIssuesServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,10 @@ class FilamentIssuesServiceProvider extends ServiceProvider
         if (file_exists($file = __DIR__ . '/helpers.php')) {
             require_once $file;
         }
+        // Register Livewire components
+        Livewire::component('filament-issues.help-modal', 
+            HelpModal::class
+        );
     }
 
     /**
