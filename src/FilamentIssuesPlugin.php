@@ -125,4 +125,17 @@ class FilamentIssuesPlugin implements Plugin
 
         return null;
     }
+
+    public static function getFilamentRouteNames(): array
+    {
+        return collect(app('router')->getRoutes()->getRoutes())
+            ->map(fn ($route) => $route->getName())
+            ->filter() // remove null names
+            ->unique()
+            ->sort()
+            ->values()
+            ->mapWithKeys(fn ($name) => [$name => $name])
+            ->toArray();
+    }
+
 }
