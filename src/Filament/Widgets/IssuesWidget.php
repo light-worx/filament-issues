@@ -12,12 +12,9 @@ class IssuesWidget extends Widget
 
     public $issues;
 
-    protected function getHeaderActions(): array
+    protected function getHeaderAction(): ?Action
     {
-        return [
-            Action::make('View Issues')
-                ->url(route('filament.admin.resources.help-issues.index')),
-        ];
+        return Action::make('View Issues')->url(route('filament.admin.resources.help-issues.index'));
     }
 
     public function mount()

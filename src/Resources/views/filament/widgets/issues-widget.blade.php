@@ -2,9 +2,10 @@
     <x-filament::section>
         <x-slot name="heading">
             Open issues ({{count($issues)}})
-            @foreach ($this->getHeaderActions() as $action)
-                {{ $action }}
-            @endforeach
+            &nbsp;&nbsp;&nbsp;
+            @if ($this->getHeaderAction())
+                {{ $this->getHeaderAction() }}
+            @endif
         </x-slot>
         <div class="space-y-4">
             <ul>
