@@ -10,6 +10,8 @@ class IssuesWidget extends Widget
 {
     protected string $view = 'filament-issues::filament.widgets.issues-widget';
 
+    protected int | string | array $columnSpan = 'full';
+
     public $issues;
 
     protected function getHeaderAction(): ?Action

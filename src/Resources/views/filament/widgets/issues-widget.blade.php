@@ -8,7 +8,7 @@
             @endif
         </x-slot>
         <div class="space-y-4">
-            <ul>
+            <ul style="list-style: circle; padding-left: 15px;">
             @foreach ($issues as $issue)
                 <li>{{$issue->description}} ({{$issue->created_at->diffForHumans()}})</li>
             @endforeach
