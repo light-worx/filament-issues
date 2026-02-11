@@ -87,9 +87,10 @@ class HelpModal extends Component implements HasForms, HasActions
             ->modalContent(function () {
                 // Ensure you have a 'content' field on your HelpDocument model
                 $helpContent = $this->helpDocument?->help_text ?? 'No content found.'; 
-
+                $videoUrl = $this->helpDocument?->video;
                 return view('filament-issues::livewire.help-modal-content', [
                     'content' => $helpContent,
+                    'videoUrl' => $videoUrl,
                 ]);
             });
     }

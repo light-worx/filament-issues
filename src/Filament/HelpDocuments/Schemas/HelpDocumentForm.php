@@ -26,6 +26,7 @@ class HelpDocumentForm
                     ->searchable()
                     ->preload()
                     ->required(),
+                Textinput::make('video')->label('Optional video url'),
                 Textarea::make('help_text')
                     ->required()
                     ->columnSpanFull(),

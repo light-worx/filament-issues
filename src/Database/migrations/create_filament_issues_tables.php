@@ -26,6 +26,7 @@ return new class () extends Migration {
             $table->string('title');
             $table->text('help_text');
             $table->string('slug');
+            $table->string('video')->nullable();
             $table->boolean('is_published');
             $table->timestamps();
         });
