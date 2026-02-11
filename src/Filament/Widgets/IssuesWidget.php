@@ -26,6 +26,10 @@ class IssuesWidget extends Widget
 
     public static function canView(): bool
     {
-        return HelpIssue::where('status', 'open')->orWhere('status','busy')->exists();
+        if ((auth()->user()->id==1) or auth()->user()->can('View help issues')) {
+            return HelpIssue::where('status', 'open')->orWhere('status','busy')->exists();
+        } else {
+            return false;   
+        }
     }
 }
